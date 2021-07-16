@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
+import Card from './components/Card';
+import Header from './components/Header';
+import Text from './components/Text';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{padding:'20px'}}>
+          ------ HEADERS ----
+       <Header>H1 Header</Header>
+       <Header type='h2'>H2 Header</Header>
+       <Header type='h3'>H3 Header</Header>
+       <Header type='h4'>H4 Header</Header>
+       <Header type='h5'>H5 Header</Header>
+       <Header type='h6'>H6 Header</Header>
+       ------ TEXT ----
+       <Text>paragraph</Text>
+       <Text type='subtitle'>subtitle</Text>
+       <Text type='button'>Button</Text>
+       
+       ------ BUTTON -----
+       <Button handleClick={()=> alert('click working')}>Click me</Button>
+       <Button inverted>Click me</Button>
+       <Button inverted accent>Click me</Button>
+       <Button accent>Click me</Button>
+      
+
+       ------ Card -----
+       <Card 
+         renderBody={<ul><li>     <Text>paragraph</Text>
+          <Text type='subtitle'>subtitle</Text>
+          <Text type='button'>Button</Text>
+          
+          ------ BUTTON -----
+          <Button handleClick={()=> alert('click working')}>Click me</Button>
+          <Button inverted>Click me</Button>
+          <Button inverted accent>Click me</Button>
+          <Button accent>Click me</Button>
+         </li></ul>}
+         renderButton={<Button secondary>Click me</Button>}/>
     </div>
   );
 }
